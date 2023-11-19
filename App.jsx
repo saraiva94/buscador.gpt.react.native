@@ -10,9 +10,17 @@ export default function App1() {
       <C1 />
       <C1 />
       <Text style={estilos.txt0}>youtube.com/cfbcursos</Text>
+      <Text style={styles.text}>cfbcursos.com.br</Text>
     </View>
   );
 }
+
+const styles = {
+  text: {
+    color: '#2b2bff',
+    fontSize: 50,
+  },
+};
 
 const estilos = StyleSheet.create({
   txt0: {
