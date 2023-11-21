@@ -6,7 +6,7 @@ let cor;
 let font;
 
 export default function (props) {
-  font = parseInt(props.font);
+  font = parseInt(props.font, 10);
   nt = props.nota;
   cor = props.cor;
   return (
