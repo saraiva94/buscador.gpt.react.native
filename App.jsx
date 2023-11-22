@@ -27,7 +27,7 @@ export default function App1() {
 
 const styles = {
   text: {
-    color: '#2b2bff',
+    color: '#2b59ff',
     fontSize: 50,
   },
 };

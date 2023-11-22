@@ -12,6 +12,7 @@ export default StyleSheet.create({
   },
   textTitle: {
     color: '#daa520',
+    fontSize: 50,
   },
   textPattern: {
     color: '#ff0000',
