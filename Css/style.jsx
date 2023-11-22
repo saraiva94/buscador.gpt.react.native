@@ -17,4 +17,7 @@ export default StyleSheet.create({
     color: '#ff0000',
     fontSize: 30,
   },
+  space: {
+    marginVertical: 10, // Ajuste a margem conforme necessário para criar o espaço desejado
+  },
 });

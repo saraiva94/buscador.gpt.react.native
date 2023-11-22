@@ -1,15 +1,25 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import C1 from './Componentes/comp';
+import style from './Css/style';
 
 export default function App1() {
   return (
     <View style={estilos.container}>
       <C1 curso="React Native" nota="In Progress" font="30" />
+      <View style={StyleSheet.compose(style.space)} />
+
       <C1 curso="C++" nota="In Progress" font="28" />
+      <View style={StyleSheet.compose(style.space)} />
+
       <C1 curso="Javascript" nota="In Progress" font="23" />
+      <View style={StyleSheet.compose(style.space)} />
+
       <C1 curso="c#" nota="In Progress" font="30" />
+      <View style={StyleSheet.compose(style.space)} />
+
       <Text style={estilos.txt0}>youtube.com/cfbcursos</Text>
+      <View style={StyleSheet.compose(style.space)} />
       <Text style={styles.text}>cfbcursos.com.br</Text>
     </View>
   );

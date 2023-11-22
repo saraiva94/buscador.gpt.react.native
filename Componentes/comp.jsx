@@ -10,7 +10,7 @@ export default function (props) {
   nt = props.nota;
 
   return (
-    <Text style={StyleSheet.compose(style.textStyle, {fontSize: font})}>
+    <Text style={StyleSheet.compose(style.textPattern, {fontSize: font})}>
       CFB Cursos - curso de {props.curso} : {nt}
     </Text>
   );
