@@ -7,37 +7,58 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Axios from 'axios';
+import axios from 'axios';
 
 export default function App1() {
   const [data, setData] = useState([]);
-  const apiKey = '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';
-  const apiUrl =
-    'https://api.openai.com/v1/engines/text-davinci-002/completions';
+  const apiKey = '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';
+  const apiUrl = 'https://api.openai.com/v1/completions';
   const [textInput, setTextInput] = useState('');
 
   const handleSend = async () => {
-    const prompt = textInput;
-    const response = await Axios.post(
-      apiUrl,
-      {
-        prompt: prompt,
-        max_tokens: 1024,
-        temperature: 0.5,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
+    try {
+      const response = await axios.post(
+        apiUrl,
+        {
+          prompt: textInput,
+          max_tokens: 1024,
+          temperature: 0.5,
         },
-      },
-    );
-    const text = response.data.choices[0].text;
-    setData([
-      ...data,
-      {type: 'user', text: textInput},
-      {type: 'bot', text: text},
-    ]);
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${apiKey}`,
+          },
+        },
+      );
+      if (
+        response &&
+        response.data &&
+        response.data.choices &&
+        response.data.choices[0]
+      ) {
+        const text = response.data.choices[0].text;
+        setData([
+          ...data,
+          {type: 'user', text: textInput},
+          {type: 'bot', text: text},
+        ]);
+      }
+    } catch (error) {
+      console.log(error); // Registrar o objeto de erro completo no console
+
+      if (error.response) {
+        console.error(
+          'Erro de resposta:',
+          error.response.status,
+          error.response.data,
+        );
+      } else if (error.request) {
+        console.error('Erro de requisição:', error.request);
+      } else {
+        console.error('Erro:', error.message);
+      }
+    }
     setTextInput('');
   };
 
