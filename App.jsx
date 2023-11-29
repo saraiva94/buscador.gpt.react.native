@@ -12,7 +12,7 @@ import axios from 'axios';
 export default function App1() {
   const [data, setData] = useState([]);
   const apiKey = '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';
-  const apiUrl = 'https://api.openai.com/v1/completions';
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
   const [textInput, setTextInput] = useState('');
 
   const handleSend = async () => {
